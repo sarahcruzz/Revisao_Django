@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c9237383f1.js" crossorigin="anonymous"></script>
+    <title>Editar Informações</title>
+</head>
+<body>    
+
+<form action="{% url 'editarInfo' id=pessoa.id%}" method="post" class="form-user">{% csrf_token %}
+    <label for="nome">Nome: </label>
+    <input type="text" placeholder="Digite seu nome" id="nome" name="nome" value="{{pessoa.nome}}">
+    <br><br>
+    <label for="idade">Idade: </label>
+    <input type="number" placeholder="Digite sua idade" id="idade" name="idade" value="{{pessoa.idade}}">
+    <button id="cadastrar" type="submit">Cadastrar</button>
+</form>
+
+</body>
+</html>

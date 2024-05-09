@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c9237383f1.js" crossorigin="anonymous"></script>
     <title>Tela Inicial</title>
 </head>
 <body>
@@ -20,12 +21,16 @@
         <tr>
             <th>Nome</th>
             <th>Idade</th>
+            <th>Editar</th>
+            <th>Excluir</th>
         </tr>
 
         {% for i in pessoas %}
         <tr>
             <td>{{i.nome}}</td>
             <td>{{i.idade}}</td>
+            <td><button id="editar" type="submit"><a href="{% url 'editarInfo' id=i.id%}"><i class="fa-solid fa-pen-to-square"></i></a></button></td>
+            <td><button id="excluir" type="submit"><a href="{% url 'excluir' id=i.id%}"><i class="fa-solid fa-trash"></i></a></button></td>
         </tr>
 
         {% endfor %}
